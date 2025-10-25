@@ -1,0 +1,144 @@
+/*Mobile design*/
+:root{
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  --main-background-color: hsl(257, 40%, 49%);
+  --main-text-color: white;
+  --hover-color: hsl(300, 69%, 71%);
+  --header-font: Poppins;
+  --main-text-font: "Open Sans";
+}
+body{
+  background-color: var(--main-background-color);
+  display: flex;
+  flex-direction: column;
+  color: var(--main-text-color);
+  padding: 1.7rem;
+  background-image: url(./images/bg-mobile.svg);
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.main-container{
+  margin: auto 0 auto 0;
+}
+.logo-section img{
+  width: 40%;
+  margin-bottom: 2.2rem;
+}
+.main-image-section img{
+  width: 100%;
+  margin-top: 1rem;
+}
+.main-info-section{
+  text-align: center;
+}
+.main-info-section h1{
+  font-family: var(--header-font);
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-top: 3.5rem;
+}
+.main-info-section p{
+  font-family: var(--main-text-font);
+  font-weight: 400;
+  margin-top: -0.7rem;
+}
+.main-info-section button{
+  color: var(--main-background-color);
+  background-color: white;
+  height: 2.5rem;
+  width: 60%;
+  border: none;
+  border-radius: 1.5rem;
+  font-weight: 600;
+  transition: background-color 0.5s ease-in-out;
+}
+.main-info-section button:hover{
+  background-color: var(--hover-color);
+  color: white;
+  cursor: pointer;
+}
+.icons-container{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.icons-container i{
+  border: 0.1rem solid white;
+  border-radius: 50%;
+  padding: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+  text-align: center;
+  transition: color 0.5s ease-in-out, border-color 0.5s ease-in-out;
+}
+.icons-container i:hover{
+  color: var(--hover-color);
+  cursor: pointer;
+  border-color: var(--hover-color);
+}
+@media all and (min-width: 768px){
+  body{
+    background-image: url(./images/bg-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: top -1.5rem left -5.42rem;
+    background-size: 85%;
+  }
+  .main-container{
+    width: 97%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "section-1 ."
+    "section-2 section-3";
+    /*". section4";*/
+    height: auto;
+    position: relative;
+  }
+  .logo-section{
+    grid-area: section-1;
+  }
+  .main-image-section{
+    grid-area: section-2;
+  }
+  .main-info-section{
+    grid-area: section-3;
+    margin: 2.5rem;
+    margin-top: -1rem;
+    text-align: left;
+  }
+  .main-info-section h1{
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: left;
+    width: 80%
+  }
+  .main-info-section p{
+    text-align: left;
+    width: 85%;
+  }
+  .main-info-section button{
+    width: 40%;
+  }
+  .icons-section{
+    /*grid-area: section-4;*/
+    width: 100%;
+    /*position: relative;*/
+    position: absolute;
+    bottom: -2rem;
+    right: 8.5rem;
+    width: 10%
+  }
+  /*.icons-container{
+    position: absolute;
+    bottom: 0;
+    right: 2rem;
+    border: solid red;
+  }*/
+}
